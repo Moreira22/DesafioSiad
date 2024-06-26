@@ -1,5 +1,7 @@
 package com.desafiosiad.DesafioSiad.model;
 
+import com.desafiosiad.DesafioSiad.domain.RequestEndereco;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -41,5 +43,13 @@ public class Endereco {
         this.bairro = bairro;
         this.rua = rua;
         this.numero = numero;
+    }
+    public Endereco(RequestEndereco data){
+        this.bairro = data.bairro();
+        this.cep = data.cep();
+        this.cidade = data.cidade();
+        this.numero = data.numero();
+        this.rua = data.rua();
+        this.pessoa = data.pessoa();
     }
 }
