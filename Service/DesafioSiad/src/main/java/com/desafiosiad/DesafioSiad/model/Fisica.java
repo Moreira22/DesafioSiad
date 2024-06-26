@@ -3,13 +3,13 @@ package com.desafiosiad.DesafioSiad.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.desafiosiad.DesafioSiad.domain.RequestFisico;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.Getter;
@@ -38,5 +38,12 @@ public class Fisica extends Pessoa {
         this.endereco = endereco;
         this.vendas = vendas;
      }
+
+    public Fisica( RequestFisico data) {
+        super(data.dataNascimento(),data.nome());
+        this.cpf = data.cpf();
+        this.endereco = data.endereco();
+        this.vendas = data.vendas();
+    }
 
 }
