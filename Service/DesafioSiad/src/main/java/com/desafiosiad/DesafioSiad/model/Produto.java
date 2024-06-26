@@ -2,6 +2,8 @@ package com.desafiosiad.DesafioSiad.model;
 
 import java.util.List;
 
+import com.desafiosiad.DesafioSiad.domain.RequestProduto;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -40,6 +42,13 @@ public class Produto {
         this.valor = valor;
         this.vendas = vendas;
         this.juridico = juridico;
+    }
+
+    public Produto(RequestProduto data){
+        this.nome = data.nome();
+        this.valor = data.valor();
+        this.vendas = data.vendas();
+        this.juridico = data.juridico();
     }
 
 }
