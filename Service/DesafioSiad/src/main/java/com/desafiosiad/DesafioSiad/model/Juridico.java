@@ -3,6 +3,8 @@ package com.desafiosiad.DesafioSiad.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.desafiosiad.DesafioSiad.domain.RequestJuridico;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
@@ -34,6 +36,12 @@ public class Juridico extends Pessoa {
         this.cnpj = cnpj;
         this.endereco = endereco;
         this.produtos = produtos;
+     }
+     public Juridico(RequestJuridico data){
+      super(data.dataNascimento(), data.nome());
+      this.cnpj = data.cnpj();
+      this.endereco = data.endereco();
+      this.produtos = data.produtos();
      }
 
 }
