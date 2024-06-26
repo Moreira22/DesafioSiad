@@ -1,5 +1,7 @@
 package com.desafiosiad.DesafioSiad.model;
 
+import com.desafiosiad.DesafioSiad.domain.RequestVenda;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,11 +34,18 @@ public class Venda {
     @JoinColumn(name = "produto_id")
     private Produto produto;
 
-    public Venda(Number total, Number quantidade,Fisica fisica, Produto produto){
+    public Venda(Number total, Number quantidade, Fisica fisica, Produto produto) {
         this.fisica = fisica;
         this.produto = produto;
         this.quantidade = quantidade;
         this.total = total;
+    }
+
+    public Venda(RequestVenda data) {
+        this.total = data.total();
+        this.quantidade = data.quantidade();
+        this.fisica = data.fisica();
+        this.produto = data.produto();
     }
 
 }
