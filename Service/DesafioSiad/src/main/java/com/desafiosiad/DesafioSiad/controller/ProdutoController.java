@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/api/fisico")
+@RequestMapping("/api/produto")
 @AllArgsConstructor
 public class ProdutoController {
 

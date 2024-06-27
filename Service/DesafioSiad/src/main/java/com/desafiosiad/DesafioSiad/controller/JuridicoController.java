@@ -23,7 +23,7 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/api/fisico")
+@RequestMapping("/api/juritico")
 @AllArgsConstructor
 public class JuridicoController {
     private final JuridicoRepository juridicoRepository;
