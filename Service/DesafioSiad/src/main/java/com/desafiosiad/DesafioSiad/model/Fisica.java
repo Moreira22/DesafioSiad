@@ -29,7 +29,7 @@ public class Fisica extends Pessoa {
     @JoinColumn(name = "endereco_id", referencedColumnName = "id")
     private Endereco endereco;
 
-    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "fisica")
     private List<Venda> vendas;
 
     public Fisica(LocalDate dataNascimento, String nome, String cpf, Endereco endereco, List<Venda> vendas) {

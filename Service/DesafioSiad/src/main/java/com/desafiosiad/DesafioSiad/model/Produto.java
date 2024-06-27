@@ -34,7 +34,7 @@ public class Produto {
     @JoinColumn(name = "juridico_id")
     private Juridico juridico;
 
-    @OneToMany(mappedBy = "vendas", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "produto")
     private List<Venda> vendas;
 
     public Produto(String nome , Number valor, Juridico juridico, List<Venda> vendas ){

@@ -35,7 +35,7 @@ public class Endereco {
     private Number numero;
 
     @OneToOne(mappedBy = "endereco")
-    private Pessoa pessoa;
+    private Juridico juridico;
 
     public Endereco(String cep, String cidade, String bairro, String rua, Number numero) {
         this.cep = cep;
@@ -50,6 +50,6 @@ public class Endereco {
         this.cidade = data.cidade();
         this.numero = data.numero();
         this.rua = data.rua();
-        this.pessoa = data.pessoa();
+        this.juridico = data.juridico();
     }
 }

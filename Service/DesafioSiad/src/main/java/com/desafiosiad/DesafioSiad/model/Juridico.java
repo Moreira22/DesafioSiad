@@ -24,11 +24,11 @@ public class Juridico extends Pessoa {
     @Column
     private String cnpj;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "endereco_id", referencedColumnName = "id")
+    @OneToOne
+    @JoinColumn(name = "endereco_id")
     private Endereco endereco;
 
-    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "juridico")
     private List<Produto> produtos;
 
      public Juridico(LocalDate dataNascimento, String nome, String cnpj, Endereco endereco, List<Produto> produtos) {

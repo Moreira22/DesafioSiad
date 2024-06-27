@@ -1,6 +1,6 @@
 package com.desafiosiad.DesafioSiad.domain;
 
-import com.desafiosiad.DesafioSiad.model.Pessoa;
+import com.desafiosiad.DesafioSiad.model.Juridico;
 
 public record RequestEndereco(
     String id,
@@ -9,6 +9,7 @@ public record RequestEndereco(
     String bairro,
     String rua,
     Number numero,
-    Pessoa pessoa) {
+    Juridico juridico
+    ) {
 
 }
