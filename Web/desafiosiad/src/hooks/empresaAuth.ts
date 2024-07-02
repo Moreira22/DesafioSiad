@@ -15,16 +15,16 @@ export const usejuridico = () => {
     };
     const getJuridicoById = async (userId: string): Promise<Juridico | null> => {
         try {
-            const response = await Api.get<Juridico>(`/jurituco${userId}`);
+            const response = await Api.get(`/jurituco${userId}`);
             return response.data;
         } catch (error) {
             console.error('Erro ao obter usuário:', error);
             return null;
         }
     };
-    const PostJuridico = async (user: Juridico): Promise<Juridico | null> => {
+    const PostJuridico = async (user: any): Promise<any | null> => {
         try {
-            const response = await Api.post<Juridico>('/jurituco/register', user);
+            const response = await Api.post('/jurituco/register', user);
             return response.data;
         } catch (error) {
             console.error('Erro ao fazer login:', error);
