@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> { }
 
-export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
+export function Form({ className, ...props }: UserAuthFormProps) {
     const [isLoading, setIsLoading] = React.useState<boolean>(false);
     const [juridico, setJuridico] = React.useState<Juridico>();
     const { getJuridico } = usejuridico();
