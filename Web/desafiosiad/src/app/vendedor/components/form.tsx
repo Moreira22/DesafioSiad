@@ -29,7 +29,7 @@ export function FormVendedor({ className, ...props }: UserAuthFormProps) {
     nome: o.string().min(3, {
       message: "Campo `Nome` precisa ter mais que 3 caracteres.",
     }),
-    cnpj: o.string().min(3, {
+    cpf: o.string().min(3, {
       message: "Campo `CNPJ` precisa ter mais que 3 digitos.",
     }),
     dataNascimento: o.number().min(3, {
@@ -41,7 +41,7 @@ export function FormVendedor({ className, ...props }: UserAuthFormProps) {
     resolver: zodResolver(formSchema),
     defaultValues: {
       nome: "",
-      cnpj: "",
+      cpf: "",
       dataNascimento: 0,
     },
   });
@@ -49,7 +49,7 @@ export function FormVendedor({ className, ...props }: UserAuthFormProps) {
   async function onSubmit(values: o.infer<typeof formSchema>) {
     const value = {
       nome: values.nome,
-      cnpj: values.cnpj,
+      cpf: values.cpf,
       dataNascimento: values.dataNascimento,
     };
     setIsLoading(true);
@@ -69,7 +69,7 @@ export function FormVendedor({ className, ...props }: UserAuthFormProps) {
   }
 
   return (
-    <div className={cn("grid gap-6", className)} {...props}>
+    <div className={cn("w-[500px] grid gap-6", className)} {...props}>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-1">
           <FormField
@@ -91,14 +91,14 @@ export function FormVendedor({ className, ...props }: UserAuthFormProps) {
           />
           <FormField
             control={form.control}
-            name="cnpj"
+            name="cpf"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-[#00000]">CNPL:</FormLabel>
+                <FormLabel className="text-[#00000]">CPF:</FormLabel>
                 <FormControl>
                   <Input
                     className="border border-[#A7A7A7]"
-                    placeholder="CNPJ"
+                    placeholder="CPF"
                     {...field}
                   />
                 </FormControl>
@@ -119,6 +119,7 @@ export function FormVendedor({ className, ...props }: UserAuthFormProps) {
                     className="border border-[#A7A7A7]"
                     placeholder="Data de Nacimento"
                     {...field}
+                    type="date"
                   />
                 </FormControl>
                 <FormMessage />
