@@ -7,7 +7,7 @@ export default function Empresa() {
   return (
     <ScrollArea className="h-[89vh] w-full p-14 bg-[#FFFFF]">
       <div className="flex gap-96 p-5">
-        <h1 className=" text-2xl text-[#00000] font-semibold ">Enpresa</h1>
+        <h1 className=" text-2xl text-[#00000] font-semibold ">Empresa</h1>
         <div>
           <Link href={"/empresa/cadastro"}>
             <Button
