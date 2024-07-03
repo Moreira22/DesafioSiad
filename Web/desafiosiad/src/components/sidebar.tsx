@@ -36,7 +36,7 @@ const Sidebar = () => {
           </Button>
         </Link>
         <Separator className="w-[250px]" />
-        <Link href="/vededor">
+        <Link href="/vendedor">
           <Button
             variant="ghost"
             className={`flex w-full justify-start gap-2 ${
