@@ -4,5 +4,5 @@ export interface Venda{
     id:string;
     total:number;
     quatidade:string;
-    fisico: Fisico;
+    fisico?: Fisico;
 }

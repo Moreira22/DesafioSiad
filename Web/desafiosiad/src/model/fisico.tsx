@@ -4,6 +4,6 @@ import { Venda} from "./venda";
 
 export interface Fisico extends Pessoa{
     cpf: string;
-    endereco: Endereco;
-    venda: Venda;
+    endereco?: Endereco;
+    venda?: Venda;
 }

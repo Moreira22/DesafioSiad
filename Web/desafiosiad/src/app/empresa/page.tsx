@@ -2,12 +2,13 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import Image from "next/image";
 import Link from "next/link";
+import { DataTableEmpresa } from "./components/tabelaListEmpresa";
 
 export default function Empresa() {
   return (
     <ScrollArea className="h-[89vh] w-full p-14 bg-[#FFFFF]">
-      <div className="flex gap-96 p-5">
-        <h1 className=" text-2xl text-[#00000] font-semibold ">Empresa</h1>
+      <div className="flex-col gap-96 p-5">
+        <h1 className=" text-2xl text-[#00000] font-semibold ">Lista de Empresas</h1>
         <div>
           <Link href={"/empresa/cadastro"}>
             <Button
@@ -18,6 +19,9 @@ export default function Empresa() {
               CADASTRA EMPRESA
             </Button>
           </Link>
+        </div>
+        <div className="py-16">
+          <DataTableEmpresa/>
         </div>
       </div>
     </ScrollArea>

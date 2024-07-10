@@ -1,9 +1,9 @@
 export interface Pessoa{
     id: string;
     nome: string;
-    dataNascimento: Date;
+    dataNascimento: string;
 }
 export interface Pessoa{
     nome: string;
-    dataNascimento: Date;
+    dataNascimento: string;
 }
